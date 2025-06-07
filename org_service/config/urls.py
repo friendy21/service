@@ -20,23 +20,53 @@ from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
-# Swagger schema view for API documentation
+# Enhanced Swagger schema view
 schema_view = get_schema_view(
     openapi.Info(
-        title="Organization Service",
+        title="Organization Service API",
         default_version='v1',
-        description="API documentation",
+        description="""
+        Organization management microservice for handling organizations, users, and data source configurations.
+        
+        ## Features
+        - Organization CRUD operations
+        - User management with role-based access
+        - Data source configuration for external services
+        - Service-to-service authentication for internal APIs
+        
+        ## Authentication
+        - Public APIs: No authentication required
+        - Internal APIs: Require service token and HMAC signature
+        
+        ## User Roles
+        - **admin**: Full administrative access
+        - **member**: Standard user access  
+        - **viewer**: Read-only access
+        
+        ## Supported Data Sources
+        - Microsoft 365
+        - Google Workspace
+        - Dropbox
+        - Slack
+        - Zoom
+        - Jira
+        """,
+        terms_of_service="https://www.example.com/terms/",
+        contact=openapi.Contact(email="support@example.com"),
+        license=openapi.License(name="MIT License"),
     ),
     public=True,
     permission_classes=(permissions.AllowAny,),
 )
-
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('orgs/', include('organizations.urls')),
     path('internal/', include('organizations.internal_urls')),
 
-    # Swagger documentation
-    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    # Enhanced Swagger documentation
+    path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui-alt'),
+    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+    path('swagger.json', schema_view.without_ui(cache_timeout=0), name='schema-json'),
 ]

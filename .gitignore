@@ -1,0 +1,517 @@
+# Enhanced Authentication Service .gitignore
+
+# ============================================================================
+# Python
+# ============================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff
+instance/
+.webassets-cache
+
+# Scrapy stuff
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# poetry
+poetry.lock
+
+# pdm
+.pdm.toml
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# ============================================================================
+# Django Specific
+# ============================================================================
+
+# Django secret key and settings
+settings_local.py
+local_settings.py
+
+# Django migrations (comment out if you want to include them)
+# */migrations/*.py
+# */migrations/*.pyc
+# !*/migrations/__init__.py
+
+# Django static files
+/static/
+/staticfiles/
+/media/
+
+# Django collected static files
+collected-static/
+
+# Django database
+*.sqlite3
+*.db
+
+# Django cache
+django_cache/
+
+# Django sessions
+django_session/
+
+# ============================================================================
+# Authentication Service Specific
+# ============================================================================
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.staging
+
+# Authentication service logs
+logs/
+*.log
+auth_service.log
+security.log
+celery.log
+debug.log
+
+# Session files
+django_session/
+
+# Email templates (if dynamically generated)
+# templates/emails/generated/
+
+# JWT secrets and keys
+jwt_secrets/
+private_keys/
+public_keys/
+certificates/
+
+# Service tokens and secrets
+service_tokens/
+api_keys/
+
+# User uploaded files
+uploads/
+user_files/
+
+# Backup files
+backups/
+*.backup
+*.bak
+*.sql.gz
+
+# Security audit files
+security_audit/
+penetration_test_results/
+
+# ============================================================================
+# Database
+# ============================================================================
+
+# SQLite
+*.sqlite3
+*.sqlite3-journal
+*.sqlite3-shm
+*.sqlite3-wal
+
+# PostgreSQL
+*.sql
+*.dump
+
+# MySQL
+*.mysql
+
+# Database backups
+db_backup/
+database_dumps/
+
+# ============================================================================
+# Redis & Caching
+# ============================================================================
+
+# Redis dumps
+dump.rdb
+appendonly.aof
+
+# Cache files
+.cache/
+cache/
+redis-cache/
+
+# ============================================================================
+# Celery
+# ============================================================================
+
+# Celery beat schedule
+celerybeat-schedule
+celerybeat.pid
+
+# Celery worker logs
+celery_worker.log
+worker*.log
+
+# Celery results
+celery_results/
+
+# ============================================================================
+# Email & Notifications
+# ============================================================================
+
+# Email queue
+email_queue/
+mail_queue/
+
+# Email templates cache
+email_cache/
+
+# Notification logs
+notification_logs/
+
+# ============================================================================
+# Security & Monitoring
+# ============================================================================
+
+# Security logs
+security_logs/
+audit_logs/
+access_logs/
+
+# Monitoring data
+monitoring/
+metrics/
+
+# SSL certificates
+*.pem
+*.key
+*.crt
+*.csr
+*.p12
+*.pfx
+
+# ============================================================================
+# Development Tools
+# ============================================================================
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Vim
+*.swp
+*.swo
+.vimrc.local
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# ============================================================================
+# Testing
+# ============================================================================
+
+# Test databases
+test_*.sqlite3
+test_*.db
+
+# Test logs
+test_logs/
+test_results/
+
+# Coverage reports
+htmlcov/
+.coverage
+coverage.xml
+*.cover
+
+# Test fixtures
+test_fixtures/
+test_data/
+
+# ============================================================================
+# Documentation
+# ============================================================================
+
+# Generated documentation
+docs/_build/
+docs/build/
+site/
+
+# API documentation
+api_docs/generated/
+
+# ============================================================================
+# Deployment
+# ============================================================================
+
+# Docker
+.dockerignore
+
+# Kubernetes
+k8s-secrets/
+kubernetes-secrets/
+
+# Deployment scripts
+deploy_scripts/private/
+deployment_keys/
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+# Ansible
+*.retry
+host_vars/
+group_vars/
+
+# ============================================================================
+# Cloud Services
+# ============================================================================
+
+# AWS
+.aws/
+aws-credentials/
+
+# Google Cloud
+.gcloud/
+gcp-credentials/
+*.json
+
+# Azure
+.azure/
+
+# ============================================================================
+# Monitoring & Analytics
+# ============================================================================
+
+# Prometheus
+prometheus_data/
+
+# Grafana
+grafana_data/
+
+# ELK Stack
+elasticsearch_data/
+logstash_data/
+kibana_data/
+
+# ============================================================================
+# Temporary Files
+# ============================================================================
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+
+# ============================================================================
+# Package Managers
+# ============================================================================
+
+# npm
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# pip
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ============================================================================
+# Custom Ignores
+# ============================================================================
+
+# Add your custom ignores here
+# custom_folder/
+# *.custom
+
+# Local configuration overrides
+config_local.py
+settings_override.py
+
+# Personal notes and documentation
+NOTES.md
+TODO.md
+personal_notes/
+
+# Scripts for local development
+local_scripts/
+dev_scripts/
+
+# Sample data
+sample_data/
+test_users.json
+
+# Performance testing
+performance_tests/
+load_test_results/
+
+# ============================================================================
+# Security Notes
+# ============================================================================
+# IMPORTANT: Never commit the following to version control:
+# - Environment files (.env, .env.*)
+# - Secret keys and tokens
+# - SSL certificates and private keys
+# - Database credentials
+# - API keys and service tokens
+# - User data or PII
+# - Production configuration files
+# - Backup files containing sensitive data
+# ============================================================================
