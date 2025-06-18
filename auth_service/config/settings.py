@@ -1,3 +1,4 @@
+# auth_service/config/settings.py
 import os
 import sys
 from pathlib import Path
@@ -32,9 +33,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'authentication.middleware.SecurityHeadersMiddleware',
-    'authentication.middleware.RateLimitMiddleware',
-    'authentication.middleware.JWTAuthenticationMiddleware',
+    'authentication.middleware.middleware.SecurityHeadersMiddleware',
+    'authentication.middleware.middleware.RateLimitMiddleware',
+    'authentication.middleware.middleware.JWTAuthenticationMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -171,7 +172,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Microservice Configuration
 JWT_SECRET = os.getenv('JWT_SECRET', 'your-super-secret-jwt-key-change-in-production')
-ORG_SERVICE_URL = os.getenv('ORG_SERVICE_URL', 'http://localhost:8001')
+ORG_SERVICE_URL = os.getenv('ORG_SERVICE_URL', 'http://localhost:4001')  # Updated port
 
 # Service-to-service authentication
 SERVICE_TOKEN = os.getenv('SERVICE_TOKEN', 'auth-service-token')
@@ -179,10 +180,10 @@ SERVICE_SECRET = os.getenv('SERVICE_SECRET', 'shared-service-secret-key')
 
 # CORS settings for microservices
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8000",
-    "http://localhost:8001",
-    "http://127.0.0.1:8000",
-    "http://127.0.0.1:8001",
+    "http://localhost:4000",  # Auth service
+    "http://localhost:4001",  # Org service  
+    "http://127.0.0.1:4000",
+    "http://127.0.0.1:4001",
     "http://localhost:3000",  # Frontend
     "https://yourdomain.com",  # Production frontend
 ]
